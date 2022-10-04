@@ -51,10 +51,6 @@ function toggleDropDownMenu() {
 siteNavbarToggleButton.addEventListener("click", toggleDropDownMenu);
 fadedBackground.addEventListener("click", toggleDropDownMenu);
 
-/* siteNavbarToggleButto.addEventListener("click", () => {
-  siteNavbarToggleButton.classList.toggle("nav-toggle-button-rotate");
-}); */
-
 // login/sign up form
 
 function setFormMessages(formElement, type, message) {
@@ -102,14 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* open/close login/sign up form */
 
-  const userButton = document.getElementById("userButton");
-  const loginSignupForm = document.getElementById("loginSignupForm");
+  let userButton = document.getElementById("userButton");
+  let loginSignupForm = document.getElementById("loginSignupForm");
 
   userButton.addEventListener("click", () => {
     loginSignupForm.classList.add("toggleLogin");
   });
 
-  const userButtonDesktop = document.getElementById("userButtonDesktop");
+  let userButtonDesktop = document.getElementById("userButtonDesktop");
 
   userButtonDesktop.addEventListener("click", () => {
     loginSignupForm.classList.add("toggleLogin");
