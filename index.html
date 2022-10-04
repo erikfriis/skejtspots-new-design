@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skejtspots</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/658461545b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+    <!-- Desktop header navbar-->
+        <div class="site-header-desktop">
+            <nav class="site-header-desktop__navbar">
+                <img src="/img/LOGO-CUT.png" alt="skejtspots logotype">
+                <ul class="site-header-desktop__menu">
+                    <li class="nav-list-focusindicator"><a href="/index.html">Home</a></li>
+                    <li><a href="/index.html">Search</a></li>
+                    <li><a href="/index.html">Add spot</a></li>
+                    <li><a href="/index.html">About us</a></li>
+                </ul>
+                <ul class="site-header-desktop__icons">
+                    <li><i class="fa-solid fa-plus"></i></li>
+                    <li><i class="fa-solid fa-user" id="userButtonDesktop"></i></li>
+                </ul>
+            </nav>
+        </div>
+    <!-- mobile header navbar-->
+        <div class="site-header-small-devices">
+            <nav class="site-header-small-devices__navbar">
+                    <button class="nav-toggle-button" id="navToggle">
+                        <img class="site-header-small-devices__toggle-button" src="/img/toggle-button-skejt.png" alt="hamburger button to toggle dropdown menu">
+                    </button>
+                <ul>
+                    <li><i class="fa-solid fa-plus" aria-label="add spot button"></i></li>
+                    <li><i class="fa-solid fa-user" id="userButton" aria-label="login/sign in button"></i></li>
+                </ul>
+            </nav>
+            <div class="site-header-small-devices__logo-container">
+                <img src="/img/LOGO-CUT.png" alt="Skejtsoits logotype">
+            </div>
+            <div class="site-header-small-devices__switch">
+                <ul>
+                    <li id="popularButton" class="top-switch-popular">Popular</li>
+                    <li id="closeByButton" class="top-switch-closeby">Close By</li>
+                </ul>
+                <div class="site-header-small-devices__switch__focus-indicator" id="indicator"> 
+                </div>
+            </div>
+        </div>
+    <!-- Dropdown menu -->
+        <nav>
+            <div class="faded-background" id="fadedBackground">
+            </div>
+            <div class="dropdown-menu" id="dropDownMenu">
+                <ul>
+                    <li class="dropdown-menu__selected"><a href="/index.html">Home</a></li>
+                    <li><a href="/index.html">Search</a></li>
+                    <li><a href="/index.html">Add spot</a></li>
+                    <li><a href="/index.html">About us</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+
+    </header>
+
+    <!-- login/sign up form -->
+
+    <section class="login-signup-section" id="loginSignupForm">
+        <div class="login-container">
+            <form class="login-form" id="login">
+                <i class="fa-solid fa-xmark" id="closeLoginSignupForm"></i>
+                <h2 class="login-form__title">Login</h2>
+                <div class="login-form__message login-form__message-error">
+                
+                </div>
+                <div class="login-form__input-group">
+                    <input type="text" class="login-form__input" autofocus placeholder="Username or email">
+                    <div class="login-form__input-error-message">   
+                    </div>
+                </div>
+
+                <div class="login-form__input-group">
+                    <input type="password" class="login-form__input" autofocus placeholder="Password">
+                    <div class="login-form__input-error-message">
+                    </div>
+                </div>
+
+                <button class="login-form__button" type="submit">
+                    Continue
+                </button>
+
+                <p class="login-input__text">
+                    <a href="#" class="login-input__link">Forgot your password?</a>
+                </p>
+
+                <p class="login-input__text">
+                    <a href="./"  class="login-input__link" id="linkCreateAccount">Don't have an account? Sign up</a>
+                </p>
+
+            </form>
+
+            <form class="login-form login-form-hidden" id="createAccount">
+                <i class="fa-solid fa-xmark" id="closeLoginSignupForm"></i>
+                <h2 class="login-form__title">Create Account</h2>
+                <div class="login-form__message login-form__message-error"> 
+                </div>
+                <div class="login-form__input-group">
+                    <input type="text" class="login-form__input" id="signupUsername" autofocus placeholder="Username">
+                    <div class="login-form__input-error-message"> 
+                    </div>
+                </div>
+
+                <div class="login-form__input-group">
+                    <input type="text" class="login-form__input" autofocus placeholder="Email">
+                    <div class="login-form__input-error-message"> 
+                    </div>
+                </div>
+
+                <div class="login-form__input-group">
+                    <input type="password" class="login-form__input" autofocus placeholder="Password">
+                    <div class="login-form__input-error-message">  
+                    </div>
+                </div>
+
+                <div class="login-form__input-group">
+                    <input type="password" class="login-form__input" autofocus placeholder="Confirm password">
+                    <div class="login-form__input-error-message"> 
+                    </div>
+                </div>
+
+                <button class="login-form__button" type="submit">
+                    Continue
+                </button>
+
+                <p class="login-input__text">
+                    <a href="./"  class="login-input__link" id="linkLogin">Already have an account? Sign in</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+
+
+    <main>
+        <!-- this container contains both sidescroll containers hiding one of them in overflow -->
+        <div class="scroll-container">
+        <section class="sidescroll-section popular snaps-inline" id="popular">  
+            <article class="popular__card popular__card-1">
+                <img src="/img/spots-img-1.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+                <div class="checked-in-friends">
+                    <p >3</p>
+                    <i class="fa-solid fa-user-group"></i>
+            </div>
+            </article>
+
+            <article class="popular__card popular__card-2">
+                <img src="/img/spots-img-2.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+                <div class="checked-in-friends">
+                    <p >1</p>
+                    <i class="fa-solid fa-user-group"></i>
+            </div>
+            </article>
+
+            <article class="popular__card popular__card-3">
+                <img src="/img/spots-3.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >5</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-4">
+                <img src="/img/spots-5.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >0</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-5">
+                <img src="/img/spots-6.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >1</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-6">
+                <img src="/img/spots-7.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >0</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-7">
+                <img src="/img/spots-3.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-8">
+                <img src="/img/spots-6.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-9">
+                <img src="/img/spots-img-1.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-10">
+                <img src="/img/spots-5.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-11">
+                <img src="/img/spots-6.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-12">
+                <img src="/img/spots-7.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p>2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+        </section>
+
+        <div class="site-header-small-devices__switch desktop-closeby-bar">
+            <ul>
+                <li id="popularButton" class="bottom-switch-popular">Popular</li>
+                <li id="closeByButton" class="bottom-switch-closeby">Close By</li>
+            </ul>
+        </div>
+
+    <!-- close by section shows on click -->
+
+
+        <section class="sidescroll-section close-by snaps-inline" id="closeBy">
+    
+            <article class="popular__card popular__card-1">
+                <img src="/img/spots-7.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+                <div class="checked-in-friends">
+                    <p >3</p>
+                    <i class="fa-solid fa-user-group"></i>
+            </div>
+            </article>
+
+            <article class="popular__card popular__card-2">
+                <img src="/img/spots-6.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+                <div class="checked-in-friends">
+                    <p >1</p>
+                    <i class="fa-solid fa-user-group"></i>
+            </div>
+            </article>
+
+            <article class="popular__card popular__card-3">
+                <img src="/img/spots-5.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >5</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-4">
+                <img src="/img/spots-3.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >0</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-5">
+                <img src="/img/spots-img-2.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >1</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-6">
+                <img src="/img/spots-img-1.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >0</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-7">
+                <img src="/img/spots-7.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-8">
+                <img src="/img/spots-6.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-9">
+                <img src="/img/spots-5.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-10">
+                <img src="/img/spots-3.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-11">
+                <img src="/img/spots-2-2.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+
+            <article class="popular__card popular__card-12">
+                <img src="/img/spots-img-1.png" alt="picture of the train banks in Malmo">
+                <div class="popular__card-info">
+                    <h3>The Train Banks</h3>
+                    <p class="location">
+                        Malmö
+                    </p>
+                    <p class="distance">
+                        15 km
+                    </p>
+                </div>
+            <div class="checked-in-friends">
+                <p >2</p>
+                <i class="fa-solid fa-user-group"></i>
+        </div>
+            </article>
+        </section>
+    </div>
+
+        <!-- section sorted by area -->
+        <section class="area-cards-section">
+            <div class="area-cards-section__headline">
+                <h2 class="pick-your-area">Pick your area bellow!</h2>
+            </div>
+            <article class="area-card area-card-1" aria-label="Stockholm city">
+                <div class="area-card__item">
+                <img class="area-card__img-1" src="/img/CARD-1-COMP.png" alt="Stockholm city">
+            </div>
+            </article>
+
+            <article class="area-card area-card-2" aria-label="Södermalm">
+                <div class="area-card__item">
+                    <img class="area-card__img-2" src="/img/Card-2-COMP.png" alt="Södermalm">
+                </div>
+            </article>
+
+            <article class="area-card area-card-3" aria-label="Kungsholmen">
+                <div class="area-card__item">
+                    <img class="area-card__img-3" src="/img/Card-3-COMP-2.png" alt="Kungsholmen">
+                </div>
+            </article>
+
+            <article class="area-card area-card-2" aria-label="Hägersten">
+                <div class="area-card__item">
+                    <img class="area-card__img-4" src="/img/Card-4-COMP-2.png" alt="Hägersten">
+                </div>
+            </article>
+
+            <article class="area-card area-card-2" aria aria-label="Bromma">
+                <div class="area-card__item">
+                    <img class="area-card__img-5" src="/img/Card-5-COMP-2.png" alt="Bromma">
+                </div>
+            </article>
+
+            <article class="area-card area-card-2" aria-label="Hässelby">
+                <div class="area-card__item">
+                    <img class="area-card__img-6" src="/img/Card-6-comp-2.png" alt="Hässelby">
+                </div>
+            </article>
+
+            <article class="area-card area-card-1" aria-label="Stockholm city">
+                <div class="area-card__item">
+                    <img class="area-card__img-1" src="/img/CARD-1-COMP.png" alt="Stockholm city">
+                </div>
+            </article>
+
+            <article class="area-card area-card-2" aria-label="Kungsholmen">
+                <div class="area-card__item">
+                    <img class="area-card__img-3" src="/img/Card-3-COMP-2.png" alt="Kungsholmen">
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <h4>Footer</h4>
+        <ul>
+            <li><a href="/index.html"> About us</a></li>
+            <li><a href="/index.html">Links</a></li>
+            <li><a href="/index.html">Add spots</a></li>
+            <li><a href="/index.html">Contact</a></li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
