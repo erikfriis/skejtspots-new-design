@@ -1,6 +1,6 @@
 @font-face {
-  font-family: IrishGrover;
   src: url(fonts/IrishGrover.ttf);
+  font-family: IrishGrover;
 }
 
 * {
@@ -265,7 +265,7 @@ footer {
   aspect-ratio: 9/9;
   object-fit: cover;
   border-radius: 0.2rem;
-  border: solid black;
+  border: 1px solid black;
 }
 
 .popular__card:hover {
@@ -369,7 +369,7 @@ footer {
 }
 
 .area-card:hover {
-  scale: 1.02;
+  scale: 1.01;
   filter: brightness(0.9);
 }
 
@@ -385,6 +385,7 @@ footer {
 
 .area-card__item {
   padding: 0.5rem;
+  position: relative;
 }
 
 .area-card__img-1 {

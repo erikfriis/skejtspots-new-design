@@ -150,3 +150,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+/* //fade in contact form on load
+
+window.addEventListener("load", zoomFunc);
+
+let formElement = document.getElementById("formId");
+
+function fadeForm() {
+  formElement.classList.add("formFadeIn");
+}
+
+
+
+
+//js for opacity fade
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", check_animation);
+
+check_animation();
+
+function check_animation() {
+  const trigger = (window.innerHeight / 6) * 6;
+
+  cards.forEach((card) => {
+    console.log(card);
+    const top = card.getBoundingClientRect().top;
+
+    if (trigger > top) {
+      card.classList.add("show_content");
+    } else {
+      card.classList.remove("show_content");
+    }
+  });
+} */
